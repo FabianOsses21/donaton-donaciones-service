@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="
+        http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="001-create-table-donaciones" author="fabian">
+        <createTable tableName="donaciones">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+
+            <column name="tipo_recurso" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="detalle_recurso" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="cantidad" type="INT">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="origen" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="nombre_donante" type="VARCHAR(255)"/>
+
+            <column name="contacto_donante" type="VARCHAR(255)"/>
+
+            <column name="centro_acopio_id" type="BIGINT"/>
+
+            <column name="necesidad_id" type="BIGINT"/>
+
+            <column name="estado" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="fecha_registro" type="DATETIME"/>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>

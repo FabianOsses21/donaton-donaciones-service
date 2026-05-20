@@ -1,0 +1,13 @@
+com\donaton\donaciones\enums\TipoRecurso.class
+com\donaton\donaciones\model\Donacion.class
+com\donaton\donaciones\mapper\DonacionMapper.class
+com\donaton\donaciones\enums\EstadoDonacion.class
+com\donaton\donaciones\dto\request\DonacionRequestDTO.class
+com\donaton\donaciones\model\Donacion$DonacionBuilder.class
+com\donaton\donaciones\dto\request\DonacionRequestDTO$DonacionRequestDTOBuilder.class
+com\donaton\donaciones\dto\response\DonacionResponseDTO.class
+com\donaton\donaciones\dto\response\DonacionResponseDTO$DonacionResponseDTOBuilder.class
+com\donaton\donaciones\DonacionesServiceApplication.class
+com\donaton\donaciones\controller\DonacionController.class
+com\donaton\donaciones\repository\DonacionRepository.class
+com\donaton\donaciones\service\DonacionService.class
