@@ -37,12 +37,12 @@ public class DonacionController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<DonacionResponseDTO> actualizar(@PathVariable Long id, @Valid @RequestBody DonacionRequestDTO dto) {
+    public ResponseEntity<DonacionResponseDTO> actualizar(@PathVariable("id") Long id, @Valid @RequestBody DonacionRequestDTO dto) {
         return ResponseEntity.ok(donacionService.actualizar(id, dto));
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> eliminar(@PathVariable Long id) {
+    public ResponseEntity<Void> eliminar(@PathVariable("id") Long id) {
         donacionService.eliminar(id);
         return ResponseEntity.noContent().build();
     }
@@ -55,22 +55,22 @@ public class DonacionController {
 }
 
     @GetMapping("/estado/{estado}")
-    public ResponseEntity<List<DonacionResponseDTO>> buscarPorEstado(@PathVariable EstadoDonacion estado) {
+    public ResponseEntity<List<DonacionResponseDTO>> buscarPorEstado(@PathVariable("estado") EstadoDonacion estado) {
         return ResponseEntity.ok(donacionService.buscarPorEstado(estado));
     }
 
     @GetMapping("/tipo/{tipoRecurso}")
-    public ResponseEntity<List<DonacionResponseDTO>> buscarPorTipoRecurso(@PathVariable TipoRecurso tipoRecurso) {
+    public ResponseEntity<List<DonacionResponseDTO>> buscarPorTipoRecurso(@PathVariable("tipoRecurso") TipoRecurso tipoRecurso) {
         return ResponseEntity.ok(donacionService.buscarPorTipoRecurso(tipoRecurso));
     }
 
     @GetMapping("/necesidad/{necesidadId}")
-    public ResponseEntity<List<DonacionResponseDTO>> buscarPorNecesidad(@PathVariable Long necesidadId) {
+    public ResponseEntity<List<DonacionResponseDTO>> buscarPorNecesidad(@PathVariable("necesidadId") Long necesidadId) {
         return ResponseEntity.ok(donacionService.buscarPorNecesidad(necesidadId));
     }
 
     @GetMapping("/centro-acopio/{centroAcopioId}")
-    public ResponseEntity<List<DonacionResponseDTO>> buscarPorCentroAcopio(@PathVariable Long centroAcopioId) {
+    public ResponseEntity<List<DonacionResponseDTO>> buscarPorCentroAcopio(@PathVariable("centroAcopioId") Long centroAcopioId) {
         return ResponseEntity.ok(donacionService.buscarPorCentroAcopio(centroAcopioId));
     }
 }
