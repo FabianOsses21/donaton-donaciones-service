@@ -3,6 +3,7 @@ package com.donaton.donaciones.service;
 import com.donaton.donaciones.dto.request.DonacionRequestDTO;
 import com.donaton.donaciones.dto.response.DonacionResponseDTO;
 import com.donaton.donaciones.enums.EstadoDonacion;
+import com.donaton.donaciones.exception.ResourceNotFoundException;
 import com.donaton.donaciones.enums.TipoRecurso;
 import com.donaton.donaciones.mapper.DonacionMapper;
 import com.donaton.donaciones.model.Donacion;
@@ -95,6 +96,6 @@ public class DonacionService {
 
     private Donacion obtenerEntidadPorId(Long id) {
         return donacionRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Donacion no encontrada"));
+                .orElseThrow(() -> new ResourceNotFoundException("Donacion no encontrada con id: " + id));
     }
 }
